@@ -47,12 +47,12 @@ modules:
   - name: srb2
     buildsystem: simple
     build-commands:
-      - 'make -C src -j $FLATPAK_BUILDER_N_JOBS LINUX64=1 NOUPX=1 SDL=1'
-      - 'install -D -m 755 -t $FLATPAK_DEST/bin bin/Linux64/Release/lsdl2srb2'
-      - 'install -D -m 644 srb2.png $FLATPAK_DEST/share/icons/hicolor/256x256/apps/$FLATPAK_ID.png'
-      - 'install -D -m 755 srb2.sh $FLATPAK_DEST/bin/srb2'
-      - 'install -D -m 644 -t $FLATPAK_DEST/share/applications $FLATPAK_ID.desktop'
-      - 'install -D -m 644 -t $FLATPAK_DEST/share/metainfo $FLATPAK_ID.metainfo.xml'
+      - make -C src -j $FLATPAK_BUILDER_N_JOBS LINUX64=1 NOUPX=1 SDL=1
+      - install -D -m 755 -t $FLATPAK_DEST/bin bin/Linux64/Release/lsdl2srb2
+      - install -D -m 644 srb2.png $FLATPAK_DEST/share/icons/hicolor/256x256/apps/$FLATPAK_ID.png
+      - install -D -m 755 srb2.sh $FLATPAK_DEST/bin/srb2
+      - install -D -m 644 -t $FLATPAK_DEST/share/applications $FLATPAK_ID.desktop
+      - install -D -m 644 -t $FLATPAK_DEST/share/metainfo $FLATPAK_ID.metainfo.xml
     sources:
       - type: git
         url: https://github.com/STJr/SRB2
@@ -60,8 +60,8 @@ modules:
         commit: feced5ec3c469b2842c70e50663373dcd2d0cd2f
       - type: script
         commands:
-          - 'ls ~/.srb2/srb2.pk3 || zenity --error --title "Missing game assets" --text "Game assets not found, please add them to your ~/.var/app/org.srb2.SRB2/.srb2 folder. See https://www.srb2.org/download/ for download instructions." --ok-label "Close" --width=400'
-          - 'lsdl2srb2 "$@"'
+          - ls ~/.srb2/srb2.pk3 || zenity --error --title "Missing game assets" --text "Game assets not found, please add them to your ~/.var/app/org.srb2.SRB2/.srb2 folder. See https://www.srb2.org/download/ for download instructions." --ok-label "Close" --width=400
+          - lsdl2srb2 "$@"
         dest-filename: srb2.sh
       - type: file
         path: org.srb2.SRB2.desktop
