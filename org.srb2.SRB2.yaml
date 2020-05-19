@@ -71,10 +71,43 @@ modules:
         commit: feced5ec3c469b2842c70e50663373dcd2d0cd2f
       - type: script
         commands:
-          - ls ~/.srb2/srb2.pk3 || zenity --error --title "Missing game assets" --text "Game assets not found, please add them to your ~/.var/app/org.srb2.SRB2/.srb2 folder. See https://www.srb2.org/download/ for download instructions." --ok-label "Close" --width=400
+          - export SRB2WADDIR=/app/extra
           - lsdl2srb2 "$@"
         dest-filename: srb2.sh
       - type: file
         path: org.srb2.SRB2.desktop
       - type: file
         path: org.srb2.SRB2.metainfo.xml
+
+  - name: srb2-assets
+    buildsystem: simple
+    build-commands:
+      - install -t $FLATPAK_DEST/bin apply_extra
+    sources:
+      - type: extra-data
+        filename: Installer.exe
+        url: https://github.com/STJr/SRB2/releases/download/SRB2_release_2.2.1/SRB2-v_221-Installer.exe
+        sha256: 5af82508be353dd41b05b793fa7aaef418eab246df7050f72c569f1809b3160f
+        size: 163207241
+      - type: extra-data
+        filename: Patch.zip
+        url: https://files.srb2.org/srb2.org/SRB2-v224-Patch.zip
+        sha256: 8f384643a226041ebd7fed5e4d1e610ffba9da36dc34f51a50d9461d768f6750
+        size: 12365549
+      - type: script
+        commands:
+          - 7z e Installer.exe "*.dta" "*.pk3" > /dev/null && rm Installer.exe
+          - unzip -o Patch.zip "*.dta" "*.pk3" > /dev/null && rm Patch.zip
+        dest-filename: apply_extra
+    modules:
+      - name: p7zip
+        make-args:
+          - 7z
+        no-autogen: true
+        sources:
+          - type: archive
+            url: https://sourceforge.net/projects/p7zip/files/p7zip/16.02/p7zip_16.02_src_all.tar.bz2
+            sha256: 5eb20ac0e2944f6cb9c2d51dd6c4518941c185347d4089ea89087ffdd6e2341f
+          - type: shell
+            commands:
+            - sed -i 's|/usr/local|/app|g' makefile.common
