@@ -46,9 +46,20 @@ modules:
 
   - name: srb2
     buildsystem: simple
+    build-options:
+      arch:
+        arm:
+          env:
+            ARCH_MAKE_ARGS: 'LINUX=1 NONX86=1'
+        aarch64:
+          env:
+            ARCH_MAKE_ARGS: 'LINUX64=1'
+        x86_64:
+          env:
+            ARCH_MAKE_ARGS: 'LINUX64=1 X86_64=1'
     build-commands:
-      - make -C src -j $FLATPAK_BUILDER_N_JOBS LINUX64=1 NOUPX=1 SDL=1
-      - install -D -m 755 -t $FLATPAK_DEST/bin bin/Linux64/Release/lsdl2srb2
+      - make -C src -j $FLATPAK_BUILDER_N_JOBS NOUPX=1 SDL=1 $ARCH_MAKE_ARGS
+      - install -D -m 755 -t $FLATPAK_DEST/bin bin/Linux*/Release/lsdl2srb2
       - install -D -m 644 srb2.png $FLATPAK_DEST/share/icons/hicolor/256x256/apps/$FLATPAK_ID.png
       - install -D -m 755 srb2.sh $FLATPAK_DEST/bin/srb2
       - install -D -m 644 -t $FLATPAK_DEST/share/applications $FLATPAK_ID.desktop
