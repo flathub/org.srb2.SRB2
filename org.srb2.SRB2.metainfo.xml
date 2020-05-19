@@ -15,10 +15,6 @@
       enemies, speed, and quite a lot of the fun that the original Sonic
       games provided.
     </p>
-    <p>
-      Proprietary assets are required to run the game. Check the project's
-      website for instructions.
-    </p>
   </description>
   <launchable type="desktop-id">org.srb2.SRB2.desktop</launchable>
   <screenshots>
