@@ -44,7 +44,7 @@
     <binary>srb2</binary>
   </provides>
   <releases>
-    <release version="2.2.6" date="2020-07-11" />
+    <release version="2.2.8" date="2020-10-04" />
   </releases>
   <content_rating type="oars-1.1">
     <content_attribute id="violence-cartoon">moderate</content_attribute>

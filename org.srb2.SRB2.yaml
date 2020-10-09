@@ -67,8 +67,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/STJr/SRB2
-        tag: SRB2_release_2.2.6
-        commit: e22964ee0aa113a11ae235f37564e6f41bff3c30
+        tag: SRB2_release_2.2.8
+        commit: 17ce7d57c3f460b60e3d3073780d830fa5f9788c
       - type: script
         commands:
           - export SRB2WADDIR=/app/extra
@@ -91,9 +91,9 @@ modules:
         size: 163207241
       - type: extra-data
         filename: Patch.zip
-        url: https://github.com/STJr/SRB2/releases/download/SRB2_release_2.2.6/SRB2-2.2.6-Patch.zip
-        sha256: ca71aa9045f02336dc0ae2ababed49eb93dcb06405ccd4c19fc684f002ab9017
-        size: 23170909
+        url: https://github.com/STJr/SRB2/releases/download/SRB2_release_2.2.8/SRB2-v2.2.8-Patch.zip
+        sha256: 2e8a255f809069097d1718eef8ee32c8605c70187b996d328bf6bf183515182c
+        size: 29008609
       - type: script
         commands:
           - 7z e Installer.exe "*.dta" "*.pk3" > /dev/null && rm Installer.exe
