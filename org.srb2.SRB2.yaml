@@ -85,31 +85,11 @@ modules:
       - install -t $FLATPAK_DEST/bin apply_extra
     sources:
       - type: extra-data
-        filename: Installer.exe
-        url: https://github.com/STJr/SRB2/releases/download/SRB2_release_2.2.1/SRB2-v_221-Installer.exe
-        sha256: 5af82508be353dd41b05b793fa7aaef418eab246df7050f72c569f1809b3160f
-        size: 163207241
-      - type: extra-data
-        filename: Patch.zip
-        url: https://github.com/STJr/SRB2/releases/download/SRB2_release_2.2.8/SRB2-v2.2.8-Patch.zip
-        sha256: 2e8a255f809069097d1718eef8ee32c8605c70187b996d328bf6bf183515182c
-        size: 29008609
+        filename: Full.zip
+        url: https://github.com/STJr/SRB2/releases/download/SRB2_release_2.2.8/SRB2-v2.2.8-Full.zip
+        sha256: 7a3805b1127bd42db6432a9fe3e25927269e334497d48bdc9c2751edc114d718
+        size: 193109226
       - type: script
         commands:
-          - 7z e Installer.exe "*.dta" "*.pk3" > /dev/null && rm Installer.exe
-          - unzip -o Patch.zip "*.dta" "*.pk3" > /dev/null && rm Patch.zip
+          - unzip -o Full.zip "*.dta" "*.pk3" > /dev/null && rm Full.zip
         dest-filename: apply_extra
-    modules:
-      - name: p7zip
-        make-args:
-          - 7z
-        no-autogen: true
-        sources:
-          - type: archive
-            url: https://sourceforge.net/projects/p7zip/files/p7zip/16.02/p7zip_16.02_src_all.tar.bz2
-            sha256: 5eb20ac0e2944f6cb9c2d51dd6c4518941c185347d4089ea89087ffdd6e2341f
-          - type: patch
-            path: p7zip.patch
-          - type: shell
-            commands:
-            - sed -i 's|/usr/local|/app|g' makefile.common
