@@ -46,8 +46,8 @@ modules:
       - /share/doc
     sources:
       - type: archive
-        url: https://lib.openmpt.org/files/libopenmpt/src/libopenmpt-0.4.20+release.autotools.tar.gz
-        sha256: 976c4bfaeacbbc2046f54300bc47000a4544ba42245209b44beff57609718d80
+        url: https://lib.openmpt.org/files/libopenmpt/src/libopenmpt-0.5.8+release.autotools.tar.gz
+        sha256: 29e2c21174b73f67f2ba5ee76808d62f182b130e4f704ee2d9ae8283982d8acd
         x-checker-data:
           type: anitya
           project-id: 141468
@@ -60,13 +60,13 @@ modules:
       arch:
         arm:
           env:
-            ARCH_MAKE_ARGS: 'LINUX=1 NONX86=1'
+            ARCH_MAKE_ARGS: LINUX=1 NONX86=1
         aarch64:
           env:
-            ARCH_MAKE_ARGS: 'LINUX64=1'
+            ARCH_MAKE_ARGS: LINUX64=1
         x86_64:
           env:
-            ARCH_MAKE_ARGS: 'LINUX64=1 X86_64=1'
+            ARCH_MAKE_ARGS: LINUX64=1 X86_64=1
     build-commands:
       - make -C src -j $FLATPAK_BUILDER_N_JOBS NOUPX=1 SDL=1 $ARCH_MAKE_ARGS
       - install -D -m 755 -t $FLATPAK_DEST/bin bin/Linux*/Release/lsdl2srb2
