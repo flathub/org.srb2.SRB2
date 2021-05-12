@@ -67,8 +67,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/STJr/SRB2
-        tag: SRB2_release_2.2.8
-        commit: 17ce7d57c3f460b60e3d3073780d830fa5f9788c
+        tag: SRB2_release_2.2.9
+        commit: 8b021ec16bcd78c566995ca65f5da920cbdd6315
       - type: script
         commands:
           - export SRB2WADDIR=/app/extra
@@ -86,9 +86,9 @@ modules:
     sources:
       - type: extra-data
         filename: Full.zip
-        url: https://github.com/STJr/SRB2/releases/download/SRB2_release_2.2.8/SRB2-v2.2.8-Full.zip
-        sha256: 7a3805b1127bd42db6432a9fe3e25927269e334497d48bdc9c2751edc114d718
-        size: 193109226
+        url: https://github.com/STJr/SRB2/releases/download/SRB2_release_2.2.9/SRB2-v229-Full.zip
+        sha256: 48e644604bed81b5ce6b12ef23a2f4042d0118d0ba70f18c534dfe86ebe6f37d
+        size: 195309133
       - type: script
         commands:
           - unzip -o Full.zip "*.dta" "*.pk3" > /dev/null && rm Full.zip
