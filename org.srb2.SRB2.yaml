@@ -48,6 +48,11 @@ modules:
       - type: archive
         url: https://lib.openmpt.org/files/libopenmpt/src/libopenmpt-0.4.20+release.autotools.tar.gz
         sha256: 976c4bfaeacbbc2046f54300bc47000a4544ba42245209b44beff57609718d80
+        x-checker-data:
+          type: anitya
+          project-id: 141468
+          stable-only: true
+          url-template: https://lib.openmpt.org/files/libopenmpt/src/libopenmpt-$version+release.autotools.tar.gz
 
   - name: srb2
     buildsystem: simple
