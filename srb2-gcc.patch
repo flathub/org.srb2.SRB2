@@ -1,0 +1,19 @@
+--- srb2/src/Makefile.cfg-orig	2022-02-06 15:17:17.735200094 -0500
++++ srb2/src/Makefile.cfg	2022-02-06 15:17:34.614352475 -0500
+@@ -12,6 +12,7 @@
+ # to avoid a false positive with the version detection...
+ 
+ SUPPORTED_GCC_VERSIONS:=\
++        112\
+ 	101 102\
+ 	91 92 93\
+ 	81 82 83 84\
+@@ -20,7 +21,7 @@
+ 	51 52 53 54 55\
+ 	40 41 42 43 44 45 46 47 48 49
+ 
+-LATEST_GCC_VERSION=10.2
++LATEST_GCC_VERSION=11.2
+ 
+ # gcc or g++
+ ifdef PREFIX
