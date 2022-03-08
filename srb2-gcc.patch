@@ -1,5 +1,6 @@
---- srb2/src/Makefile.cfg-orig	2022-02-06 15:17:17.735200094 -0500
-+++ srb2/src/Makefile.cfg	2022-02-06 15:17:34.614352475 -0500
+#--- srb2/src/Makefile.cfg-orig	2022-02-06 15:17:17.735200094 -0500
+#+++ srb2/src/Makefile.cfg	2022-02-06 15:17:34.614352475 -0500
++++ srb2/src/Makefile.d/detect.mk -0500
 @@ -12,6 +12,7 @@
  # to avoid a false positive with the version detection...
  
