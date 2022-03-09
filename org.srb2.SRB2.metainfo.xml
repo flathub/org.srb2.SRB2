@@ -45,6 +45,12 @@
   </provides>
   <releases>
     <release version="2.2.10" date="2022-03-06" />
+    <release version="2.2.9" date="2021-05-07" />
+    <release version="2.2.8" date="2020-10-04" />
+    <release version="2.2.6" date="2020-07-11" />
+    <release version="2.2.4" date="2020-05-11" />
+    <release version="2.2.3" date="2020-05-10" />
+    <release version="2.2.2" date="2020-02-23" />
   </releases>
   <content_rating type="oars-1.1">
     <content_attribute id="violence-cartoon">moderate</content_attribute>
