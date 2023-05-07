@@ -46,8 +46,8 @@ modules:
       - /share/doc
     sources:
       - type: archive
-        url: https://lib.openmpt.org/files/libopenmpt/src/libopenmpt-0.6.10+release.autotools.tar.gz
-        sha256: c25be8dc0dac23cec025487e58f195e4d14f7d94aeddd5fe46b21c04f1ce2774
+        url: https://lib.openmpt.org/files/libopenmpt/src/libopenmpt-0.7.1+release.autotools.tar.gz
+        sha256: bf175d26448bb133f74714f3a8859e7000b93522fb3577559dffc037161910f9
         x-checker-data:
           type: anitya
           project-id: 141468
