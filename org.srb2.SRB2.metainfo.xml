@@ -40,6 +40,7 @@
     </screenshot>
   </screenshots>
   <url type="homepage">https://www.srb2.org</url>
+  <developer_name>Sonic Team Junior</developer_name>
   <provides>
     <binary>srb2</binary>
   </provides>
