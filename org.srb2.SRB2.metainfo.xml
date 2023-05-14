@@ -40,6 +40,10 @@
     </screenshot>
   </screenshots>
   <url type="homepage">https://www.srb2.org</url>
+  <url type="bugtracker">https://git.do.srb2.org/STJr/SRB2/-/issues</url>
+  <url type="help">https://mb.srb2.org</url>
+  <url type="faq">https://www.srb2.org/faq</url>
+  <url type="vcs-browser">https://git.do.srb2.org/STJr/SRB2</url>
   <developer_name>Sonic Team Junior</developer_name>
   <provides>
     <binary>srb2</binary>
