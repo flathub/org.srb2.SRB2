@@ -45,7 +45,23 @@
     <binary>srb2</binary>
   </provides>
   <releases>
-    <release version="2.2.10" date="2022-03-06" />
+    <release version="2.2.10" date="2022-03-06">
+      <description>
+        <ul>
+          <li>The file limit has been massively increased. (The skin limit is still 32, though!)</li>
+          <li>The tutorial has been redone for the new default controls.</li>
+          <li>Many new additions to Lua, including bot features, an improved input library, easing functions and more.</li>
+          <li>Blending modes for midtextures and FOFs.</li>
+          <li>Multi-tagging and more convenient slope copying for non-UDMF maps.</li>
+          <li>Generalized slopes for UDMF maps.</li>
+          <li>The ability to load folders for easier addon development. No need to compile your resources into a PK3 until you’re ready to release your work!</li>
+          <li>A couple of updated graphics, textures and sprites.</li>
+          <li>Way too many bug fixes to list here.</li>
+        </ul>
+        <p>You can read the full changelog on GitLab.</p>
+      </description>
+      <url>https://www.srb2.org/2022/03/srb2-v2-2-10-patch-release</url>
+    </release>
     <release version="2.2.9" date="2021-05-07" />
     <release version="2.2.8" date="2020-10-04" />
     <release version="2.2.6" date="2020-07-11" />
