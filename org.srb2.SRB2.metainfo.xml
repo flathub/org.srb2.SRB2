@@ -49,7 +49,7 @@
     <binary>srb2</binary>
   </provides>
   <releases>
-    <release version="2.2.11" date="2022-05-19">
+    <release version="2.2.11" date="2023-05-19">
       <description>
         <ul>
           <li>Removed the framerate limit: Using interpolation, SRB2 can now run at far more than 35fps, allowing for smoother looking 60fps gameplay (or much higher on supported monitors). You can set a custom limit at the bottom of Video Options.</li>
