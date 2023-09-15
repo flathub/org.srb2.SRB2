@@ -49,6 +49,19 @@
     <binary>srb2</binary>
   </provides>
   <releases>
+    <release version="2.2.13" date="2023-09-09">
+      <description>
+        <ul>
+          <li>Fixed renderhitbox causing netgame instability</li>
+          <li>Fixed floorsprite rendering causing a possible crash if the sprite had a size of 1×1</li>
+          <li>Fixed hitbox interpolation when scaling mobjs</li>
+          <li>Optimized sprite rendering in the software renderer</li>
+          <li>Exposed skin.supername to Lua</li>
+        </ul>
+        <p>You can read the full changelog on GitLab.</p>
+      </description>
+      <url>https://www.srb2.org/2023/09/srb2-v2-2-13-released</url>
+    </release>
     <release version="2.2.11" date="2023-05-19">
       <description>
         <ul>
