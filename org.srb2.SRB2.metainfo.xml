@@ -49,33 +49,9 @@
     <binary>srb2</binary>
   </provides>
   <releases>
-    <release version="2.2.13" date="2023-09-09">
-      <description>
-        <ul>
-          <li>Fixed renderhitbox causing netgame instability</li>
-          <li>Fixed floorsprite rendering causing a possible crash if the sprite had a size of 1×1</li>
-          <li>Fixed hitbox interpolation when scaling mobjs</li>
-          <li>Optimized sprite rendering in the software renderer</li>
-          <li>Exposed skin.supername to Lua</li>
-        </ul>
-        <p>You can read the full changelog on GitLab.</p>
-      </description>
-      <url>https://www.srb2.org/2023/09/srb2-v2-2-13-released</url>
-    </release>
-    <release version="2.2.11" date="2023-05-19">
-      <description>
-        <ul>
-          <li>Removed the framerate limit: Using interpolation, SRB2 can now run at far more than 35fps, allowing for smoother looking 60fps gameplay (or much higher on supported monitors). You can set a custom limit at the bottom of Video Options.</li>
-          <li>Fixed error 503: This prevented some players from accessing the ingame Master Server browser. If you’ve been having trouble using the Master Server, give it another try.</li>
-          <li>Support larger characters in ERZ: Addon characters with large collision boxes, such as Ryder the Falcon, can now complete ERZ. We introduced some new gravity-related elements you can add to your maps as a part of this fix.</li>
-          <li>Added support for the Universal Doom Map Format (UDMF): UDMF is a more flexible and powerful map format that allows for easier editing and more complex level designs. This long-awaited feature is a game-changer for mappers, opening up new possibilities for custom levels.</li>
-          <li>Better rendering in large levels: Levels that used to break the renderer by the sheer size of their rooms should be far more visually stable now.</li>
-          <li>Improved Lua command/cvar safety and added basic rate limitation for Lua file access: Helps prevent addons from writing too much data to hard disk, among other things.</li>
-        </ul>
-        <p>You can read the full changelog on GitLab.</p>
-      </description>
-      <url>https://www.srb2.org/2023/05/srb2-v2-2-11-patch-release</url>
-    </release>
+    <release version="2.2.13" date="2023-09-09" />
+    <release version="2.2.12" date="2023-09-08" />
+    <release version="2.2.11" date="2023-05-19" />
     <release version="2.2.10" date="2022-03-06" />
     <release version="2.2.9" date="2021-05-07" />
     <release version="2.2.8" date="2020-10-04" />
