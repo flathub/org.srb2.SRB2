@@ -6,9 +6,8 @@ command: srb2
 finish-args:
   - --share=ipc
   - --share=network
-  - --socket=fallback-x11
   - --socket=pulseaudio
-  - --socket=wayland
+  - --socket=x11
   - --device=all
   - --persist=.srb2
 modules:
