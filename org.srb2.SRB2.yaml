@@ -53,6 +53,21 @@ modules:
           stable-only: true
           url-template: https://lib.openmpt.org/files/libopenmpt/src/libopenmpt-$version+release.autotools.tar.gz
 
+  - name: sdl-mixer-x
+    buildsystem: autotools
+    no-autogen: true
+    build-options:
+      strip: false
+      no-debuginfo: true
+    cleanup:
+      - /include
+      - /lib/*.a
+      - /lib/*.la
+    sources:
+      - type: git
+        url: https://github.com/WohlSoft/SDL-Mixer-X.git
+        commit: 7181c771aa29deaea8bfbe6098613c3a929e9189
+
   - name: srb2
     buildsystem: simple
     build-options:
@@ -64,7 +79,7 @@ modules:
           env:
             ARCH_MAKE_ARGS: LINUX64=1 X86_64=1
     build-commands:
-      - make -C src -j $FLATPAK_BUILDER_N_JOBS NOUPX=1 SDL=1 $ARCH_MAKE_ARGS
+      - make -C src -j $FLATPAK_BUILDER_N_JOBS NOUPX=1 SDL=1 HAVE_MIXERX=1 $ARCH_MAKE_ARGS
       - install -D -m 755 -t $FLATPAK_DEST/bin bin/lsdl2srb2
       - install -D -m 644 srb2.png $FLATPAK_DEST/share/icons/hicolor/256x256/apps/$FLATPAK_ID.png
       - install -D -m 755 srb2.sh $FLATPAK_DEST/bin/srb2
