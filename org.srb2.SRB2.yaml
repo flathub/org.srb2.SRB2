@@ -12,7 +12,7 @@ finish-args:
   - --persist=.srb2
 modules:
   - shared-modules/glu/glu-9.json
-  - shared-modules/SDL2/SDL2-with-libdecor.json
+  - shared-modules/SDL2/SDL2-no-libdecor.json
 
   - name: game-music-emu
     buildsystem: cmake-ninja
