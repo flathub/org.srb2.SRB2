@@ -54,19 +54,29 @@ modules:
           url-template: https://lib.openmpt.org/files/libopenmpt/src/libopenmpt-$version+release.autotools.tar.gz
 
   - name: sdl-mixer-x
-    buildsystem: autotools
-    no-autogen: true
-    build-options:
-      strip: false
-      no-debuginfo: true
+    buildsystem: cmake
     cleanup:
       - /include
-      - /lib/*.a
       - /lib/*.la
+      - /lib/*.so
+      - /lib/pkgconfig
+      - /share/doc
     sources:
       - type: git
-        url: https://github.com/WohlSoft/SDL-Mixer-X.git
+        url: https://github.com/WohlSoft/SDL-Mixer-X
         commit: 7181c771aa29deaea8bfbe6098613c3a929e9189
+    build-options:
+      - -DCMAKE_BUILD_TYPE=Release
+      - -DDOWNLOAD_AUDIO_CODECS_DEPENDENCY=ON
+      - -DAUDIO_CODECS_BUILD_LOCAL_SDL2=ON
+    post-install: |
+      mkdir -p $FLATPAK_DESTDIR/$FLATPAK_INSTALL_LIB_DIR/pkgconfig
+      mv $FLATPAK_DESTDIR/$FLATPAK_INSTALL_PREFIX/lib/pkgconfig/sdl_mixer_x.pc $FLATPAK_DESTDIR/$FLATPAK_INSTALL_LIB_DIR/pkgconfig/
+    build-commands:
+      - cmake $CMAKE_ARGS ..
+      - make -j$(nproc)
+    install-commands:
+      - make install DESTDIR=$FLATPAK_DESTDIR
 
   - name: srb2
     buildsystem: simple
