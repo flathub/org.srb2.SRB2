@@ -59,6 +59,7 @@ modules:
     builddir: true
     config-opts:
       - -DCMAKE_BUILD_TYPE=Release
+      - -DSDL_MIXER_X_SHARED=ON
     sources:
       - type: git
         url: https://github.com/WohlSoft/SDL-Mixer-X
@@ -79,7 +80,7 @@ modules:
           env:
             ARCH_MAKE_ARGS: LINUX64=1 X86_64=1
     build-commands:
-      - make -C src -j $FLATPAK_BUILDER_N_JOBS NOUPX=1 SDL=1 HAVE_MIXERX=1 $ARCH_MAKE_ARGS LDFLAGS="-lstdc++"
+      - make -C src -j $FLATPAK_BUILDER_N_JOBS NOUPX=1 SDL=1 HAVE_MIXERX=1 $ARCH_MAKE_ARGS
       - install -D -m 755 -t $FLATPAK_DEST/bin bin/lsdl2srb2
       - install -D -m 644 srb2.png $FLATPAK_DEST/share/icons/hicolor/256x256/apps/$FLATPAK_ID.png
       - install -D -m 755 srb2.sh $FLATPAK_DEST/bin/srb2
