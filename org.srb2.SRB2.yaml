@@ -21,13 +21,13 @@ modules:
       - /lib/pkgconfig
     sources:
       - type: archive
-        url: https://bitbucket.org/mpyne/game-music-emu/downloads/game-music-emu-0.6.3.tar.xz
-        sha256: aba34e53ef0ec6a34b58b84e28bf8cfbccee6585cebca25333604c35db3e051d
+        url: https://github.com/libgme/game-music-emu/archive/refs/tags/0.6.3.tar.gz
+        sha256: 4c5a7614acaea44e5cb1423817d2889deb82674ddbc4e3e1291614304b86fca0
         x-checker-data:
           type: anitya
           project-id: 866
           stable-only: true
-          url-template: https://bitbucket.org/mpyne/game-music-emu/downloads/game-music-emu-$version.tar.xz
+          url-template: https://github.com/libgme/game-music-emu/archive/refs/tags/$version.tar.gz
 
   - name: libopenmpt
     config-opts:
