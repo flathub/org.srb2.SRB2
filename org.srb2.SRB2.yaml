@@ -79,6 +79,7 @@ modules:
         x86_64:
           env:
             ARCH_MAKE_ARGS: LINUX64=1 X86_64=1
+      cflags: '-I /app/include/SDL2'
     build-commands:
       - make -C src -j $FLATPAK_BUILDER_N_JOBS NOUPX=1 SDL=1 HAVE_MIXERX=1 $ARCH_MAKE_ARGS
       - install -D -m 755 -t $FLATPAK_DEST/bin bin/lsdl2srb2
