@@ -12,7 +12,7 @@ finish-args:
   - --persist=.srb2
 modules:
   - shared-modules/glu/glu-9.json
-  - shared-modules/SDL2/SDL2-with-libdecor.json
+  - shared-modules/linux-audio/fluidsynth2.json
 
   - name: game-music-emu
     buildsystem: cmake-ninja
@@ -53,20 +53,6 @@ modules:
           project-id: 141468
           stable-only: true
           url-template: https://lib.openmpt.org/files/libopenmpt/src/libopenmpt-$version+release.autotools.tar.gz
-
-  - name: fluidsynth
-    buildsystem: cmake-ninja
-    builddir: true
-    config-opts:
-      - -DCMAKE_BUILD_TYPE=Release
-    sources:
-      - type: git
-        url: https://github.com/FluidSynth/fluidsynth
-        tag: v2.3.5
-        commit: 619fc5c3380513146cd05e17decf8d747b02bba4
-        x-checker-data:
-          type: git
-          tag-pattern: ^(v[\d.]+)$
 
   - name: sdl-mixer-x
     buildsystem: cmake-ninja
