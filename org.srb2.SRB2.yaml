@@ -91,6 +91,6 @@ modules:
       -cp -r ../SRB2Assets-Public/* $FLATPAK_DEST
     sources:
       - type: git
-        url: https://github.com/STJr/srb2assets-public
+        url: https://git.do.srb2.org/STJr/srb2assets-public
         tag: SRB2_release_2.2.14
         commit: e160f328b9a4557f2ac7de8fa91ae028b0764950
