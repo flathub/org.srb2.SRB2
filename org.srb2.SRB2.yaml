@@ -78,8 +78,6 @@ modules:
           - export SRB2WADDIR=/app/extra
           - lsdl2srb2 "$@"
         dest-filename: srb2.sh
-      - type: patch
-        path: srb2-gcc.patch
       - type: file
         path: org.srb2.SRB2.desktop
       - type: file
