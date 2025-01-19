@@ -51,6 +51,22 @@ modules:
           stable-only: true
           url-template: https://lib.openmpt.org/files/libopenmpt/src/libopenmpt-$version+release.autotools.tar.gz
 
+  - name: miniupnpc
+    buildsystem: cmake-ninja
+    config-opts:
+      - -DCMAKE_BUILD_TYPE=Release
+      - -DUPNPC_BUILD_SAMPLE=OFF
+      - -DUPNPC_BUILD_SHARED=ON
+      - -DUPNPC_BUILD_TESTS=OFF
+    sources:
+      - type: git
+        url: https://salsa.debian.org/miniupnp-team/miniupnpc.git
+        commit: d76660fe1ad6f515242149722bbc8d45692ddd0d
+        tag: debian/2.2.8-1
+        x-checker-data:
+          type: git
+          tag-pattern: ^debian\/(\d.+)$
+
   - name: srb2
     buildsystem: simple
     build-options:
