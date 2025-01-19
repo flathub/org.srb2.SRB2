@@ -49,6 +49,7 @@
     <binary>srb2</binary>
   </provides>
   <releases>
+    <release version="2.2.14" date="2024-01-16" />
     <release version="2.2.13" date="2023-09-09" />
     <release version="2.2.12" date="2023-09-08" />
     <release version="2.2.11" date="2023-05-19" />
