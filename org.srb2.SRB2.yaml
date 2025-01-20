@@ -102,7 +102,7 @@ modules:
   - name: srb2assets
     buildsystem: simple
     build-commands:
-      -cp -r ../SRB2Assets-Public/* $FLATPAK_DEST
+      - cp -r * $FLATPAK_DEST/bin
     sources:
       - type: git
         url: https://git.do.srb2.org/STJr/srb2assets-public
