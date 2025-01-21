@@ -11,8 +11,6 @@ finish-args:
   - --device=all
   - --persist=.srb2
 modules:
-  - shared-modules/glu/glu-9.json
-
   - name: game-music-emu
     buildsystem: cmake-ninja
     cleanup:
@@ -53,6 +51,22 @@ modules:
           stable-only: true
           url-template: https://lib.openmpt.org/files/libopenmpt/src/libopenmpt-$version+release.autotools.tar.gz
 
+  - name: miniupnpc
+    buildsystem: cmake-ninja
+    config-opts:
+      - -DCMAKE_BUILD_TYPE=Release
+      - -DUPNPC_BUILD_SAMPLE=OFF
+      - -DUPNPC_BUILD_SHARED=ON
+      - -DUPNPC_BUILD_TESTS=OFF
+    sources:
+      - type: git
+        url: https://salsa.debian.org/miniupnp-team/miniupnpc.git
+        commit: d76660fe1ad6f515242149722bbc8d45692ddd0d
+        tag: debian/2.2.8-1
+        x-checker-data:
+          type: git
+          tag-pattern: ^debian\/(\d.+)$
+
   - name: srb2
     buildsystem: simple
     build-options:
@@ -64,7 +78,7 @@ modules:
           env:
             ARCH_MAKE_ARGS: LINUX64=1 X86_64=1
     build-commands:
-      - make -C src -j $FLATPAK_BUILDER_N_JOBS NOUPX=1 SDL=1 $ARCH_MAKE_ARGS
+      - make -C src -j $FLATPAK_BUILDER_N_JOBS $ARCH_MAKE_ARGS
       - install -D -m 755 -t $FLATPAK_DEST/bin bin/lsdl2srb2
       - install -D -m 644 srb2.png $FLATPAK_DEST/share/icons/hicolor/256x256/apps/$FLATPAK_ID.png
       - install -D -m 755 srb2.sh $FLATPAK_DEST/bin/srb2
@@ -73,32 +87,24 @@ modules:
     sources:
       - type: git
         url: https://github.com/STJr/SRB2
-        tag: SRB2_release_2.2.13
-        commit: a4a3b5b0944720a536a94c9d471b64c822cdac61
+        tag: SRB2_release_2.2.14
+        commit: 7b6bf976646e44f6fa4ed92700770b64dfcdcfbc
       - type: script
         commands:
-          - export SRB2WADDIR=/app/extra
+          - export SRB2WADDIR=/app/bin
           - lsdl2srb2 "$@"
         dest-filename: srb2.sh
-      - type: patch
-        path: srb2-gcc.patch
       - type: file
         path: org.srb2.SRB2.desktop
       - type: file
         path: org.srb2.SRB2.metainfo.xml
 
-  - name: srb2-assets
+  - name: srb2assets
     buildsystem: simple
     build-commands:
-      - install -t $FLATPAK_DEST/bin apply_extra
+      - cp -r * $FLATPAK_DEST/bin
     sources:
-      - type: extra-data
-        filename: Full.zip
-        url: https://github.com/STJr/SRB2/releases/download/SRB2_release_2.2.13/SRB2-v2213-Full.zip
-        sha256: 83b91a351135b63705e49daffa44e7ac3cf3e33b397f56ff347ebb71eda27d4a
-        size: 156054029
-      - type: script
-        commands:
-          - unzip -o Full.zip "*.dta" "*.pk3" "*.dat" "models/*" > /dev/null && rm
-            Full.zip
-        dest-filename: apply_extra
+      - type: git
+        url: https://git.do.srb2.org/STJr/srb2assets-public
+        tag: SRB2_release_2.2.14
+        commit: e160f328b9a4557f2ac7de8fa91ae028b0764950
