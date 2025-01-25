@@ -11,6 +11,8 @@ finish-args:
   - --device=all
   - --persist=.srb2
 modules:
+  - shared-modules/linux-audio/fluidsynth2.json
+
   - name: game-music-emu
     buildsystem: cmake-ninja
     cleanup:
@@ -51,6 +53,21 @@ modules:
           stable-only: true
           url-template: https://lib.openmpt.org/files/libopenmpt/src/libopenmpt-$version+release.autotools.tar.gz
 
+  - name: sdl-mixer-x
+    buildsystem: cmake-ninja
+    builddir: true
+    config-opts:
+      - -DCMAKE_BUILD_TYPE=Release
+      - -DSDL_MIXER_X_SHARED=ON
+    sources:
+      - type: git
+        url: https://github.com/WohlSoft/SDL-Mixer-X
+        tag: 2.6.0
+        commit: 7181c771aa29deaea8bfbe6098613c3a929e9189
+        x-checker-data:
+          type: git
+          tag-pattern: ^([\d.]+)$
+
   - name: miniupnpc
     buildsystem: cmake-ninja
     config-opts:
@@ -77,8 +94,9 @@ modules:
         x86_64:
           env:
             ARCH_MAKE_ARGS: LINUX64=1 X86_64=1
+      cflags: '-I /app/include/SDL2'
     build-commands:
-      - make -C src -j $FLATPAK_BUILDER_N_JOBS $ARCH_MAKE_ARGS
+      - make -C src -j $FLATPAK_BUILDER_N_JOBS HAVE_MIXERX=1 $ARCH_MAKE_ARGS
       - install -D -m 755 -t $FLATPAK_DEST/bin bin/lsdl2srb2
       - install -D -m 644 srb2.png $FLATPAK_DEST/share/icons/hicolor/256x256/apps/$FLATPAK_ID.png
       - install -D -m 755 srb2.sh $FLATPAK_DEST/bin/srb2
