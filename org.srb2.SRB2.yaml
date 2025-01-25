@@ -83,6 +83,7 @@ modules:
         x-checker-data:
           type: git
           tag-pattern: ^debian\/(\d.+)$
+
   - name: srb2
     buildsystem: simple
     build-options:
