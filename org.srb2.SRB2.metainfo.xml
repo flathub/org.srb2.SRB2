@@ -54,8 +54,74 @@
     <binary>srb2</binary>
   </provides>
   <releases>
-    <release version="2.2.14" date="2025-01-16" >
-      <url type="details">https://git.do.srb2.org/STJr/SRB2/-/wikis/Changelogs/2.2.14</url>
+    <release version="2.2.15" date="2025-01-26" >
+      <url type="details">https://git.do.srb2.org/STJr/SRB2/-/wikis/Changelogs/2.2.15</url>
+      <description>
+       <h2>Bugfixes</h2>
+       <ul>
+        <li>Fixed regressions:
+         <ul>
+          <li>Caused by b20b71b (!2592)</li>
+          <li>Caused by !2211 (!2597)</li>
+          <li>Caused by !2227 (!2599)</li>
+          <li>Caused by !2100 (!2588)</li>
+          <li>Caused by !2587 (!2598)</li>
+          <li>Caused by !2425 (!2581)</li>
+          <li>Fixed in-game Master Server listing (!2603)</li>
+          <li>Fixed
+           <code>skin.sprites[i]</code> when used with 
+           <code>FF_SPR2SUPER</code> (!2613)
+          </li>
+          <li>Fixed character select regression (!2614)</li>
+         </ul>
+        </li>
+        <li>Fixed file downloader checking the old asset file names (!2596)</li>
+        <li>Fixed single player level select conditions (!2609, !2611)</li>
+        <li>Reapplied 
+         <code>invcolor</code> changes from !2116 (!2595)
+        </li>
+       </ul>
+       <h2>Optimizations</h2>
+       <ul>
+        <li>Inlined P_MobjWasRemoved (!2616)</li>
+       </ul>
+       <h2>Other</h2>
+       <ul>
+        <li>Made Fang/Amy/Metal Sonic objects use their respective skins</li>
+       </ul>
+       <h2>Resource files</h2>
+       <ul>
+        <li>
+         <code>srb2.pk3</code>
+         <ul>
+          <li>Removed duplicated sprites</li>
+         </ul>
+        </li>
+        <li>
+         <code>zones.pk3</code>
+         <ul>
+          <li>Fixed map issues</li>
+         </ul>
+        </li>
+        <li>
+         <code>characters.pk3</code>
+         <ul>
+          <li>Updated old sprites</li>
+          <li>Added 
+           <code>MSCx</code> sprites
+          </li>
+         </ul>
+        </li>
+        <li>
+         <code>music.pk3</code>
+         <ul>
+          <li>Updated 
+           <code>MUSICDEF</code>
+          </li>
+         </ul>
+        </li>
+       </ul>
+      </description>
     </release>
     <release version="2.2.13" date="2023-09-09" >
       <url type="details">https://git.do.srb2.org/STJr/SRB2/-/wikis/Changelogs/2.2.13</url>
