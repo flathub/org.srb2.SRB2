@@ -105,8 +105,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/STJr/SRB2
-        tag: SRB2_release_2.2.14
-        commit: 7b6bf976646e44f6fa4ed92700770b64dfcdcfbc
+        tag: SRB2_release_2.2.15
+        commit: 8701ef41f617c06e23a7b8ccd2199c160c5d1dd1
       - type: script
         commands:
           - export SRB2WADDIR=/app/bin
@@ -124,5 +124,5 @@ modules:
     sources:
       - type: git
         url: https://git.do.srb2.org/STJr/srb2assets-public
-        tag: SRB2_release_2.2.14
-        commit: e160f328b9a4557f2ac7de8fa91ae028b0764950
+        tag: SRB2_release_2.2.15
+        commit: f9651218133f1001df39265bb53ac80ff19762a4

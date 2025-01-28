@@ -54,8 +54,60 @@
     <binary>srb2</binary>
   </provides>
   <releases>
-    <release version="2.2.14" date="2025-01-16" >
-      <url type="details">https://git.do.srb2.org/STJr/SRB2/-/wikis/Changelogs/2.2.14</url>
+    <release version="2.2.15" date="2025-01-26" >
+      <url type="details">https://git.do.srb2.org/STJr/SRB2/-/wikis/Changelogs/2.2.15</url>
+      <description>
+       Bugfixes
+
+        Fixed regressions:
+
+          Caused by b20b71b (!2592)
+          Caused by !2211 (!2597)
+          Caused by !2227 (!2599)
+          Caused by !2100 (!2588)
+          Caused by !2587 (!2598)
+          Caused by !2425 (!2581)
+          Fixed in-game Master Server listing (!2603)
+          Fixed
+           skin.sprites[i] when used with 
+           FF_SPR2SUPER (!2613)
+
+          Fixed character select regression (!2614)
+
+        Fixed file downloader checking the old asset file names (!2596)
+        Fixed single player level select conditions (!2609, !2611)
+        Reapplied 
+         invcolor changes from !2116 (!2595)
+
+       Optimizations
+
+        Inlined P_MobjWasRemoved (!2616)
+
+       Other
+
+        Made Fang/Amy/Metal Sonic objects use their respective skins
+
+       Resource files
+
+         srb2.pk3
+
+          Removed duplicated sprites
+
+         zones.pk3
+
+          Fixed map issues
+
+         characters.pk3
+
+          Updated old sprites
+          Added 
+           MSCx sprites
+
+         music.pk3
+
+          Updated 
+           MUSICDEF
+      </description>
     </release>
     <release version="2.2.13" date="2023-09-09" >
       <url type="details">https://git.do.srb2.org/STJr/SRB2/-/wikis/Changelogs/2.2.13</url>
