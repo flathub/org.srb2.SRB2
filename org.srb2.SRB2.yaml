@@ -12,22 +12,7 @@ finish-args:
   - --persist=.srb2
 modules:
   - shared-modules/linux-audio/fluidsynth2.json
-
-  - name: game-music-emu
-    buildsystem: cmake-ninja
-    cleanup:
-      - /include
-      - /lib/*.so
-      - /lib/pkgconfig
-    sources:
-      - type: archive
-        url: https://github.com/libgme/game-music-emu/archive/refs/tags/0.6.3.tar.gz
-        sha256: 4c5a7614acaea44e5cb1423817d2889deb82674ddbc4e3e1291614304b86fca0
-        x-checker-data:
-          type: anitya
-          project-id: 866
-          stable-only: true
-          url-template: https://github.com/libgme/game-music-emu/archive/refs/tags/$version.tar.gz
+  - shared-modules/gzdoom/game-music-emu.json
 
   - name: libopenmpt
     config-opts:
@@ -87,17 +72,15 @@ modules:
   - name: srb2
     buildsystem: simple
     build-options:
-      arch:
-        aarch64:
-          env:
-            ARCH_MAKE_ARGS: LINUX64=1
-        x86_64:
-          env:
-            ARCH_MAKE_ARGS: LINUX64=1 X86_64=1
-      cflags: '-I /app/include/SDL2'
+       env:
+            libgme_ARGS: -DSRB2_CONFIG_USE_GME=ON -Dlibgme_INCLUDE_DIR=/app/include/gme -Dlibgme_LIBRARY=/app/lib/libgme.so
+            libopenmpt_ARGS: -Dlibopenmpt_INCLUDE_DIR=/app/include/libopenmpt -Dlibopenmpt_LIBRARY=/app/lib/libopenmpt.so
+            miniupnp_ARGS: -Dlibminiupnpc_INCLUDE_DIR=/app/include/miniupnpc -Dlibminiupnpc_LIBRARY=/app/lib/libminiupnpc.so
+            EXE_NAME_ARGS: -DSRB2_SDL2_EXE_NAME=lsdl2srb2
     build-commands:
-      - make -C src -j $FLATPAK_BUILDER_N_JOBS HAVE_MIXERX=1 $ARCH_MAKE_ARGS
-      - install -D -m 755 -t $FLATPAK_DEST/bin bin/lsdl2srb2
+      - cmake -B build.cmake $libgme_ARGS $libopenmpt_ARGS $miniupnp_ARGS $EXE_NAME_ARGS -G "Unix Makefiles"
+      - make --directory=build.cmake --keep-going -j $FLATPAK_BUILDER_N_JOBS
+      - install -D -m 755 -t $FLATPAK_DEST/bin build.cmake/bin/lsdl2srb2
       - install -D -m 644 srb2.png $FLATPAK_DEST/share/icons/hicolor/256x256/apps/$FLATPAK_ID.png
       - install -D -m 755 srb2.sh $FLATPAK_DEST/bin/srb2
       - install -D -m 644 -t $FLATPAK_DEST/share/applications $FLATPAK_ID.desktop
