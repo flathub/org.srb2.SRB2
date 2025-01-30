@@ -86,8 +86,7 @@ modules:
   - name: soundfont
     buildsystem: simple
     build-commands:
-      - mkdir -p $FLATPAK_DEST/share/games/srb2/soundfonts/
-      - cp -r * $FLATPAK_DEST/share/games/srb2/soundfonts/
+      - install -D -m 644 8bitsf.SF2 -t $FLATPAK_DEST/share/games/srb2/soundfonts/
     sources:
       - type: file
         url: https://musical-artifacts.com/artifacts/23/8bitsf.SF2
