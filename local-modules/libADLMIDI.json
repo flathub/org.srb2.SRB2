@@ -1,0 +1,31 @@
+{
+  "name": "libADLMIDI",
+  "buildsystem": "cmake-ninja",
+  "builddir": true,
+  "config-opts": [
+    "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+    "-DlibADLMIDI_STATIC=OFF",
+    "-DlibADLMIDI_SHARED=ON",
+    "-DWITH_UNIT_TESTS=OFF"
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/Wohlstand/libADLMIDI/archive/refs/tags/v1.5.1.tar.gz",
+      "sha256": "98b5a9c1c8bd8f6715c3440ff6a1913420fe96ebdd5607ff11e42ac998801c41",
+       "x-checker-data": {
+        "type": "anitya",
+        "project-id": 19042,
+        "stable-only": true,
+        "url-template": "https://github.com/Wohlstand/libADLMIDI/archive/refs/tags/v$version.tar.gz"
+      },
+      "type": "archive"
+    }
+  ],
+  "cleanup": [
+    "/share/doc",
+    "/lib/pkgconfig",
+    "/lib/libADLMIDI.so",
+    "/include/adlmidi.h"
+  ]
+}
+
