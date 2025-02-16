@@ -43,7 +43,6 @@
     "libxmp.json",
     "shared-modules/linux-audio/libinstpatch.json",
     "shared-modules/linux-audio/fluidsynth2.json",
-    "libmodplug.json",
-    "libEDMIDI.json"
+    "libmodplug.json"
   ]
 }

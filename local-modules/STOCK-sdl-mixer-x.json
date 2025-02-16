@@ -39,7 +39,6 @@
     "/include"
   ],
   "modules": [
-    "libmodplug.json",
-    "libEDMIDI.json"
+    "libmodplug.json"
   ]
 }
