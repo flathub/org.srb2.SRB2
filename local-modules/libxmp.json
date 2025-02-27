@@ -1,28 +1,28 @@
 {
-  "name": "libxmp",
-  "buildsystem": "cmake-ninja",
-  "builddir": true,
-  "config-opts": [
-    "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
-    "-DBUILD_STATIC=OFF"
-  ],
-  "sources": [
-    {
-      "url": "https://github.com/libxmp/libxmp/releases/download/libxmp-4.6.1/libxmp-4.6.1.tar.gz",
-      "sha256": "af605e72c83b24abaf03269347e24ebc3fc06cd7b495652a2c619c1f514bc5cb",
-       "x-checker-data": {
-        "type": "anitya",
-        "project-id": 1784,
-        "stable-only": true,
-        "url-template": "https://github.com/libxmp/libxmp/releases/download/libxmp-$version/libxmp-$version.tar.gz"
-      },
-      "type": "archive"
-    }
-  ],
-  "cleanup": [
-    "/lib/pkgconfig",
-    "/lib/libxmp.so",
-    "/lib/cmake",
-    "/include"
-  ]
+    "name": "libxmp",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+        "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+        "-DBUILD_STATIC=OFF"
+    ],
+    "sources": [
+        {
+            "url": "https://github.com/libxmp/libxmp/releases/download/libxmp-4.6.2/libxmp-4.6.2.tar.gz",
+            "sha256": "acac1705be2c4fb4d2d70dc05759853ba6aab747a83de576b082784d46f5a4b9",
+            "x-checker-data": {
+                "type": "anitya",
+                "project-id": 1784,
+                "stable-only": true,
+                "url-template": "https://github.com/libxmp/libxmp/releases/download/libxmp-$version/libxmp-$version.tar.gz"
+            },
+            "type": "archive"
+        }
+    ],
+    "cleanup": [
+        "/lib/pkgconfig",
+        "/lib/libxmp.so",
+        "/lib/cmake",
+        "/include"
+    ]
 }
