@@ -1,0 +1,28 @@
+{
+  "name": "game-music-emu",
+  "buildsystem": "cmake-ninja",
+  "config-opts": [
+    "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+    "-DBUILD_SHARED_LIBS=YES",
+    "-DGME_BUILD_STATIC=NO",
+    "-DGME_YM2612_EMU=Nuked"
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/libgme/game-music-emu/archive/refs/tags/0.6.4.tar.gz",
+      "sha256": "f2360feb5a32ace226c583df4faf6eff74145c81264aaea11e17a1af2f6f101a",
+      "x-checker-data": {
+        "type": "anitya",
+        "project-id": 866,
+        "stable-only": true,
+        "url-template": "https://github.com/libgme/game-music-emu/archive/refs/tags/$version.tar.gz"
+      },
+      "type": "archive"
+    }
+  ],
+  "cleanup": [
+    "/lib/libgme.so",
+    "/include/gme",
+    "/lib/pkgconfig"
+  ]
+}

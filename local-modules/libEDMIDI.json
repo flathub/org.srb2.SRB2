@@ -1,0 +1,28 @@
+
+{
+  "name": "libEDMIDI",
+  "disabled": true,
+  "buildsystem": "cmake-ninja",
+  "builddir": true,
+  "config-opts": [
+    "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+    "-DlibEDMIDI_STATIC=OFF",
+    "-DlibEDMIDI_SHARED=ON",
+    "-DWITH_UNIT_TESTS=OFF"
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/Wohlstand/libEDMIDI.git",
+      "branch": "master",
+      "commit": "59a744b0107e7731955a394b5d4d01230eca5368",
+      "type": "git"
+    }
+  ],
+  "cleanup": [
+    "/share/doc",
+    "/lib/pkgconfig",
+    "/lib/libEDMIDI.so",
+    "/include/emu_de_midi.h"
+  ]
+}
+

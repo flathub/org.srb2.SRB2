@@ -1,0 +1,50 @@
+{
+  "name": "sdl-mixer-x",
+  "buildsystem": "cmake-ninja",
+  "builddir": true,
+  "config-opts": [
+    "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+    "-DBUILD_SHARED_LIBS=ON",
+    "-DMIXERX_DISABLE_SIMD=OFF",
+    "-DUSE_SYSTEM_AUDIO_LIBRARIES=ON",
+    "-DUSE_SYSTEM_SDL2=ON",
+    "-DUSE_FLAC=ON",
+    "-DMIXERX_ENABLE_LGPL=ON",
+    "-DUSE_MP3_MPG123=ON",
+    "-DUSE_XMP=ON",
+    "-DUSE_GME=ON",
+    "-DUSE_FFMPEG=ON",
+    "-DUSE_MIDI_FLUIDSYNTH=ON",
+    "-DUSE_MIDI_FLUIDLITE=OFF",
+    "-DMIXERX_ENABLE_GPL=ON",
+    "-DUSE_MIDI_ADLMIDI=ON",
+    "-DUSE_MIDI_OPNMIDI=ON"
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/WohlSoft/SDL-Mixer-X.git",
+      "tag": "2.6.0",
+      "commit": "7181c771aa29deaea8bfbe6098613c3a929e9189",
+      "x-checker-data": {
+        "type": "git",
+        "tag-pattern": "^([\\d.]+)$"
+      },
+      "type": "git"
+    }
+  ],
+  "cleanup": [
+    "/lib/pkgconfig",
+    "/lib/libSDL2_mixer_ext.so",
+    "/lib/cmake",
+    "/include"
+  ],
+  "modules": [
+    "libOPNMIDI.json",
+    "libADLMIDI.json",
+    "GPL2-game-music-emu-MAME.json",
+    "libxmp.json",
+    "shared-modules/linux-audio/libinstpatch.json",
+    "shared-modules/linux-audio/fluidsynth2.json",
+    "libmodplug.json"
+  ]
+}
