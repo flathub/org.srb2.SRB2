@@ -79,7 +79,7 @@ modules:
     sources:
       - type: script
         commands:
-          - exec /app/bin/lsdlsrb2 +midisoundfont /app/share/games/srb2/soundfonts/8bitsf.SF2 +midiplayer Fluidsynth "$@"
+          - exec /app/bin/lsdlsrb2 +midisoundfont /app/share/games/srb2/soundfonts/8bitsf.SF2 +midiplayer Fluidsynth -useUPnP "$@"
         dest-filename: release.sh
     buildsystem: simple
     build-commands:
@@ -89,7 +89,7 @@ modules:
     sources:
       - type: script
         commands:
-          - exec gdb --ex 'break I_Error' --ex 'start' --quiet --args /app/bin/lsdlsrb2 -nomouse -win -nofork +midisoundfont /app/share/games/srb2/soundfonts/8bitsf.SF2 +midiplayer Fluidsynth "$@"
+          - exec gdb --ex 'break I_Error' --ex 'start' --quiet --args /app/bin/lsdlsrb2 -nomouse -win -nofork +midisoundfont /app/share/games/srb2/soundfonts/8bitsf.SF2 +midiplayer Fluidsynth -useUPnP "$@"
         dest-filename: debug.sh
     buildsystem: simple
     build-commands:
