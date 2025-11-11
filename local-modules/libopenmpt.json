@@ -12,8 +12,8 @@
     ],
     "sources": [
         {
-            "url": "https://lib.openmpt.org/files/libopenmpt/src/libopenmpt-0.8.0+release.autotools.tar.gz",
-            "sha256": "553ee9c63c4b3cbc9b664d5bc31d8bc4eeb345fad8809f03cbf93147a108ab32",
+            "url": "https://lib.openmpt.org/files/libopenmpt/src/libopenmpt-0.8.3+release.autotools.tar.gz",
+            "sha256": "25d486a4da9728819274ed0959fd79a1c6358954710d54c14047c6457c8ca8ac",
             "x-checker-data": {
                 "type": "anitya",
                 "project-id": 141468,
