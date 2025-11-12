@@ -10,15 +10,16 @@
   ],
   "sources": [
     {
-      "url": "https://github.com/Wohlstand/libADLMIDI/archive/refs/tags/v1.5.1.tar.gz",
-      "sha256": "98b5a9c1c8bd8f6715c3440ff6a1913420fe96ebdd5607ff11e42ac998801c41",
-       "x-checker-data": {
+      "url": "https://github.com/Wohlstand/libADLMIDI.git",
+      "tag": "v1.6.1",
+      "commit": "2b350f9ef5fa7bafd90b8ce3beb2a77c1e87af25",
+      "x-checker-data": {
         "type": "anitya",
         "project-id": 19042,
         "stable-only": true,
-        "url-template": "https://github.com/Wohlstand/libADLMIDI/archive/refs/tags/v$version.tar.gz"
+        "tag-template": "v$version"
       },
-      "type": "archive"
+      "type": "git"
     }
   ],
   "cleanup": [

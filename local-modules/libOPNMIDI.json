@@ -11,11 +11,13 @@
   "sources": [
     {
       "url": "https://github.com/Wohlstand/libOPNMIDI.git",
-      "tag": "v1.5.1",
-      "commit": "275e3c01940c4e0ab9ee6cde41244c55b4b5c94e",
+      "tag": "v1.6.1",
+      "commit": "0e26636eefcdbf843f734dbdafc699d43129f758",
       "x-checker-data": {
-        "type": "git",
-        "tag-pattern": "^v([\\d.]+)$"
+        "type": "anitya",
+        "project-id": 386549,
+        "stable-only": true,
+        "tag-template": "v$version"
       },
       "type": "git"
     }
