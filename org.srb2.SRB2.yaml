@@ -1,6 +1,6 @@
 app-id: org.srb2.SRB2
 runtime: org.freedesktop.Platform
-runtime-version: '24.08'
+runtime-version: '25.08'
 sdk: org.freedesktop.Sdk
 command: release.sh
 build-options:
@@ -46,6 +46,8 @@ modules:
       - -DSRB2_SDL2_EXE_NAME=lsdlsrb2
     buildsystem: cmake-ninja
     builddir: true
+    build-options:
+      cflags: -g -O3 -std=gnu17
     build-commands:
       - install -D -m 644 $FLATPAK_BUILDER_BUILDDIR/srb2.png $FLATPAK_DEST/share/icons/hicolor/256x256/apps/$FLATPAK_ID.png
     post-install:
