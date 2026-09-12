@@ -10,16 +10,15 @@
   ],
   "sources": [
     {
-      "url": "https://github.com/Wohlstand/libOPNMIDI.git",
-      "tag": "v1.6.1",
-      "commit": "0e26636eefcdbf843f734dbdafc699d43129f758",
+      "url": "https://github.com/Wohlstand/libopnmidi/archive/refs/tags/v1.6.2.tar.gz",
+      "sha256": "59bc4e9a88d57fa810b499932b829cd80cb88fce100bab9e3da82158edd5550d",
       "x-checker-data": {
         "type": "anitya",
         "project-id": 386549,
         "stable-only": true,
-        "tag-template": "v$version"
+        "url-template": "https://github.com/Wohlstand/libopnmidi/archive/refs/tags/v$version.tar.gz"
       },
-      "type": "git"
+      "type": "archive"
     }
   ],
   "cleanup": [
