@@ -11,8 +11,8 @@
     ],
     "sources": [
         {
-            "url": "https://miniupnp.tuxfamily.org/files/miniupnpc-2.3.3.tar.gz",
-            "sha256": "d52a0afa614ad6c088cc9ddff1ae7d29c8c595ac5fdd321170a05f41e634bd1a",
+            "url": "https://miniupnp.tuxfamily.org/files/miniupnpc-2.3.4.tar.gz",
+            "sha256": "2c5457d5bc5723a03f0f961a062f27ab2da5b2be51b20bb62b7267f19b74f4e4",
             "x-checker-data": {
                 "type": "anitya",
                 "project-id": 1986,
