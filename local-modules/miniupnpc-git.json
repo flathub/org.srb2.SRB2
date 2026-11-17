@@ -1,0 +1,35 @@
+{
+    "name": "miniupnpc",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "subdir": "miniupnpc",
+    "config-opts": [
+        "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+        "-DUPNPC_BUILD_STATIC=OFF",
+        "-DUPNPC_BUILD_SHARED=ON",
+        "-DUPNPC_BUILD_TESTS=OFF",
+        "-DUPNPC_BUILD_SAMPLE=OFF"
+    ],
+    "sources": [
+        {
+            "url": "https://github.com/miniupnp/miniupnp.git",
+            "tag": "miniupnpc_2_3_5",
+            "commit": "e1db7c47295d38b2b416c892779dae9afa434016",
+            "x-checker-data": {
+                "type": "anitya",
+                "project-id": 1986,
+                "stable-only": true,
+                "tag-template": "miniupnpc_${version0}_${version1}_${version2}"
+            },
+            "type": "git"
+        }
+    ],
+    "cleanup": [
+        "/share/man",
+        "/lib/pkgconfig",
+        "/lib/libminiupnpc.so",
+        "/lib/cmake",
+        "/include",
+        "/bin/external-ip.sh"
+    ]
+}
